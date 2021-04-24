@@ -18,7 +18,11 @@ public class OpenTelemetryAgentSpanContextSupplier implements SpanContextSupplie
       test.getSpanId();
       test.getSpanId();
       return true;
-    } catch (NoClassDefFoundError e) {
+    } catch (LinkageError ignored) {
+      // NoClassDefFoundError:
+      //   Either OpenTelemetry is not present, or it is version 0.9.1 or older when io.opentelemetry.api.trace.Span did not exist.
+      // IncompatibleClassChangeError:
+      //   The application uses an OpenTelemetry version between 0.10.0 and 0.15.0 when SpanContext was a class, and not an interface.
       return false;
     }
   }

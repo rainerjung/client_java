@@ -298,6 +298,8 @@ class YourClass {
 
 ## Exemplars
 
+TODO: Document that Exemplars are supported with OpenTelemetry 0.16.0 or higher. When `client_java` 0.11.0 was released the current OpenTelemetry version was 1.1.0.
+
 Exemplars are a feature of the [OpenMetrics](http://openmetrics.io) format that allows applications to link metrics
 to example traces. Starting with version 0.11.0, `client_java` automatically adds Exemplars for applications that
 are instrumented with [OpenTelemetry](https://opentelemetry.io/) distributed tracing. No code change is required.
